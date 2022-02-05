@@ -1,4 +1,9 @@
 body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:rgba(230, 230, 230, 0.761);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -7,16 +12,46 @@ header {
     justify-content: center;
     padding: 1%;
     height: 5%;
-    background: darkblue;
+    background: rgb(75, 74, 74);
     color: whitesmoke;
+}
+
+img {
+    justify-content: center;
+    width: 800px;
+    height: 300px;
 }
 
 .container {
     display: flex;
+    width: 90%;
 }
 
-.flex {
+.flex-1 {
     flex: 1;
     border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(132, 208, 235);
+}
+
+.flex-2 {
+    flex: 1;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(132, 208, 235);
+}
+
+.flex-3 {
+    flex: 1;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(132, 208, 235);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
