@@ -1,4 +1,3 @@
-<<<<<<< js-start-branch
 # Unit 06: Server-Side APIs 
 =======
 # Coin Versus Coin
