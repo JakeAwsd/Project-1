@@ -27,3 +27,5 @@ When I choose to REFRESH the page, Etherium & Bitcoin stay as static elements wi
 ## Credits 
 ,,,
 J. Meeks, E. Lopus, K. Durant, J. Allarakhia
+
+,,,
