@@ -23,30 +23,32 @@ img {
 }
 
 .container {
-    display: flex;
+    display: inline-block; 
     width: 90%;
 }
 
-.flex-1 {
+.flex {
+     
     flex: 1;
+    margin: 15px;
     border: 2px solid black;
     border-radius: 15px;
     background-color: rgb(132, 208, 235);
 }
 
-.flex-2 {
+/* .flex-2 {
     flex: 1;
     border: 2px solid black;
     border-radius: 15px;
     background-color: rgb(132, 208, 235);
-}
+} */
 
-.flex-3 {
+/* .flex-3 {
     flex: 1;
     border: 2px solid black;
     border-radius: 15px;
     background-color: rgb(132, 208, 235);
-}
+} */
 
 .center {
     display: block;
