@@ -7,16 +7,10 @@ header {
     justify-content: center;
     padding: 1%;
     height: 5%;
-    background: darkblue;
+    background: #b4a42b;
     color: whitesmoke;
 }
 
-.container {
+.main {
     display: flex;
 }
-
-.flex {
-    flex: 1;
-    border: 2px solid black;
-}
-
