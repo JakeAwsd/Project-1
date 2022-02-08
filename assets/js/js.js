@@ -1,10 +1,12 @@
-// var ethprice = document.querySelector('#price-container');
-var apiUrl = 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=' + apiKey;
-var apiKey = 'YAMMU36XYW1SCRJTKPY8KM9T5EFJC82EX5';
+// var for URL + key
 
-var getApi = function (eth) {
 
-    fetch(apiUrl)
+var randomcryptoButton = document.querySelector('#randocryptoBtn');
+
+var getEtherApi = function () {
+    var etcscanApiUrl = 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=' + apiKey;
+    var apiKey = 'YAMMU36XYW1SCRJTKPY8KM9T5EFJC82EX5';
+    fetch(etcscanApiUrl)
         
         .then(function (response) {
         return response.json();
@@ -20,5 +22,49 @@ var getApi = function (eth) {
 
     }
 
-getApi();
+getEtherApi();
 
+// var getbitcoinaverageApi = function () {
+//     var bitcoinaverageUrl = 'https://apiv2.bitcoinaverage.com';
+
+//     fetch(bitcoinaverageUrl, {
+//         method: 'GET', //GET is the default.
+//         credentials: 'same-origin', // include, *same-origin, omit
+//         redirect: 'follow', // manual, *follow, error
+//         headers: {
+//             "x-ba-key": "OGQxMjExMmQ1ZDE3NDM2YTlhNzU5NmM0OTI1MGRhM2I",
+//         }
+//     })
+//     .then(function (response) {
+//     return response.json();
+//     })
+//     .then(function (data) {
+//         console.log(data)
+//             // const pricedata = data.result.ethusd
+//             // document.getElementById('#price-container').textContent = pricedata + " USD";
+//     })
+//     .catch(function (error) {
+//         console.log(error)
+//     });
+// }
+// getbitcoinaverageApi();
+
+var addCrypto = function () {
+    var myHeaders = new Headers();
+    myHeaders.append("x-ba-key", "OGQxMjExMmQ1ZDE3NDM2YTlhNzU5NmM0OTI1MGRhM2I");
+    
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+    
+    fetch("https://apiv2.bitcoinaverage.com/indices/crypto/ticker/ADABTC", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+}
+
+addCrypto();
+
+// randomcryptoButton.addEventListener('click', buttonClickHandler);
