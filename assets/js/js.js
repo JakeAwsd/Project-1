@@ -1,6 +1,7 @@
 // var for URL + key
 
-
+var lastPriceEl = document.getElementById('lastPrice');
+var bitcoinEl = document.getElementById('bitcoinEl');
 var randomcryptoButton = document.querySelector('#randocryptoBtn');
 
 var getEtherApi = function () {
@@ -48,9 +49,12 @@ getEtherApi();
 //     });
 // }
 // getbitcoinaverageApi();
+var buttonClickHandler = function (){}
 
 var addCrypto = function () {
+    lastPriceEl.textContent = "";
     var myHeaders = new Headers();
+    
     myHeaders.append("x-ba-key", "OGQxMjExMmQ1ZDE3NDM2YTlhNzU5NmM0OTI1MGRhM2I");
     
     var requestOptions = {
@@ -59,9 +63,18 @@ var addCrypto = function () {
       redirect: 'follow'
     };
     
-    fetch("https://apiv2.bitcoinaverage.com/indices/crypto/ticker/ADABTC", requestOptions)
+    fetch("https://apiv2.bitcoinaverage.com/indices/crypto/ticker/BTCUSDC", requestOptions)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(function(result){
+        
+          console.log(result);
+          var last = result.last;
+          var symbol = result.display_symbol;
+          console.log(`this is last ${last}`);
+          console.log(`this is symbol ${symbol}`);
+          lastPriceEl.textContent = last;
+
+      })
       .catch(error => console.log('error', error));
 }
 
