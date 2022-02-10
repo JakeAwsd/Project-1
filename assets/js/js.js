@@ -84,7 +84,6 @@ addCrypto();
 randomcryptoButton.addEventListener("click", function(event) {
     event.preventDefault();
 
-
     getCryptoNames();
     localData();
 });
