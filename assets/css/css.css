@@ -16,7 +16,7 @@ header {
     justify-content: center;
     padding: 1%;
     height: 5%;
-    background: rgb(75, 74, 74);
+    background: rgb(8, 27, 138);
     color: whitesmoke;
 }
 
@@ -28,7 +28,8 @@ img {
 
 .container {
     display: flex;
-    width: 90%;
+    margin: auto;
+    width: 60%;
 }
 
 .flex {
@@ -42,24 +43,23 @@ img {
     background-color: rgb(132, 208, 235);
 }
 
-/* .flex-2 {
-    flex: 1;
-    border: 2px solid black;
-    border-radius: 15px;
-    background-color: rgb(132, 208, 235);
-} */
-
-/* .flex-3 {
-    flex: 1;
-    border: 2px solid black;
-    border-radius: 15px;
-    background-color: rgb(132, 208, 235);
-} */
-
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
 }
 
+.eth-image {
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    margin-left: 5px;
+}
+
+.btc-image {
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    margin-left: 5px;
+}
