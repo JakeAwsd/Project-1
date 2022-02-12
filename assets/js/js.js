@@ -1,4 +1,6 @@
 // var for URL + key
+var localStorage = JSON.parse(localStorage.getItem("crypto"));
+let randomCryptos = ['ADA', 'BTC', 'BSV', 'BTS', 'DOT', 'FIL', 'RDD', 'GRS', 'WBTC', 'LTC'];
 
 var body = document.body;
 var h1El = document.createElement("h1");
@@ -43,6 +45,7 @@ var getCryptoNames = function () {
         .then(function (data) {
             console.log(data)
             localStorage.setItem("crypto", JSON.stringify(data));
+            
         })
         .catch(function (error) {
             console.log(error)
@@ -86,13 +89,15 @@ randomcryptoButton.addEventListener("click", function(event) {
 
     getCryptoNames();
     localData();
+
 });
 
 function localData() {
     var cryptos = JSON.parse(localStorage.getItem("crypto"));
+    var randomNum = Math.floor(Math.random() * 11);
     if (cryptos !== null) {
-      document.querySelector("#last-crypto").textContent = lastCrypto.crypto.ADA + 
-      " has a current price of: " + lastCrypto.lastPriceEl + " USD"
+      document.querySelector("#last-crypto").textContent = cryptos.crypto[randomCryptos[randomNum]] + " has a current price of: " + cryptos.lastPriceEl + " USD"
     }
-    
-  }
+}
+
+console.log(randomCryptos[3]);
