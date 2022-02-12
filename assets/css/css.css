@@ -16,13 +16,13 @@ header {
     color: whitesmoke;
 }
 
-img {
+/* img {
     justify-content: center;
     object-fit: cover;
     width: 800px;
     height: 150px;
     object-position: 10% 20%;
-}
+} */
 
 .container {
     display: flex;
@@ -31,7 +31,7 @@ img {
 }
 
 .flex {
-    
+
     flex: 1;
     text-align: center;
     margin: 15px;
@@ -50,15 +50,11 @@ img {
 .eth-image {
     width: 25px;
     height: 25px;
-    margin-left: 5px;
-}
-
-.compare-btn {
-    width: 100%;
+    margin: auto;
 }
 
 .btc-image {
     width: 25px;
     height: 25px;
-    margin-left: 5px;
+    margin: auto;
 }
