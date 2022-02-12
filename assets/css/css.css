@@ -16,13 +16,13 @@ header {
     color: whitesmoke;
 }
 
-/* img {
+img {
     justify-content: center;
     object-fit: cover;
     width: 800px;
     height: 150px;
     object-position: 10% 20%;
-} */
+}
 
 .container {
     display: flex;
@@ -35,7 +35,7 @@ header {
     flex: 1;
     text-align: center;
     margin: 15px;
-    border: 2px solid black;
+    border: 2px solid whitesmoke;
     border-radius: 15px;
     background-color: rgb(132, 208, 235);
 }
@@ -54,7 +54,7 @@ header {
 }
 
 .compare-btn {
-    width: 100%;
+    width: 30%;
 }
 
 .btc-image {

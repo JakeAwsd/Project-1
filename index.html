@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/css.css" />
     <script src="https://cdn.tailwindcss.com"></script>
    
@@ -15,8 +14,8 @@
 
   <body>
 
-    <header>
-      <h1>Coin vs. Coin</h1>
+    <header class="bg-[url('https://static.vecteezy.com/system/resources/previews/002/429/474/original/electronic-circuit-design-on-a-dark-blue-background-vector.jpg')]">
+      <h1 class="text-3xl text-sky-400">Coin vs. Coin</h1>
     </header>
 
 
@@ -25,32 +24,32 @@
     </div>
 
     
-    <div class="container">
-        <div id="ETH" class="flex flex-col justify-center content-evenly items-center bg-blue-500 hover:bg-blue-700 text-white font-bold rounded shadow">
+    <div class="container font-mono">
+        <div id="ETH" class="flex flex-col justify-center content-evenly items-center bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-3xl shadow">
             <h3 id="coinName">Ethereum</h3>
             <p>Symbol: <img src="https://cryptoslate.com/wp-content/themes/cryptoslate-2020/imgresize/timthumb.php?src=https://cryptoslate.com/wp-content/uploads/2021/10/ethereum-miner-1.jpg&w=100&h=100&q=75" alt="ethereum-black" class="eth-image"> </p>
-            <p>Price: <span id="#price-container"></span></p>
+            <p>Price: $<span id="#price-container" ></span></p>
         </div> 
 
     </div>
 
-    <div id="bitcoinEl" class="container">
-        <div id="bitcoin" class="flex flex-col justify-center content-evenly items-center bg-blue-500 hover:bg-blue-700 text-white font-bold rounded shadow">
+    <div id="bitcoinEl" class="container font-mono">
+        <div id="bitcoin" class="flex flex-col justify-center content-evenly items-center bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-3xl shadow">
          <h3 id="BTC">Bitcoin<img src="https://hashflare.net/images/post/btc.png" alt="bitcoin-gold" class="btc-image"></h3>
-         <p id="lastPrice"></p>
-         
+         <p>Price: <span id="lastPrice" ></span></p>
         </div>
     </div>
 
-    <div class="container">
-      <div class="flex flex-col justify-center content-evenly bg-blue-500 hover:bg-blue-700 text-white font-bold rounded shadow">
+    <div class="container font-mono">
+      <div class="flex flex-col justify-center content-evenly bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-3xl shadow">
         <p id="last-crypto"></p>
       </div>
   </div>
 
-
-    <button id="randocryptoBtn" class="compare-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Random Crypto</button>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<div class="flex justify-center content-evenly items-center">
+    <button id="randocryptoBtn" class="compare-btn bg-blue-500 hover:bg-blue-700 text-white font-bold font-mono py-2 px-4 rounded">Add Random Crypto</button>
+  </div> 
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="./assets/js/js.js"></script>
 
 </body>
