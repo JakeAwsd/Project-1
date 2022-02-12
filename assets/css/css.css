@@ -53,6 +53,10 @@ header {
     margin: auto;
 }
 
+.compare-btn {
+    width: 100%;
+}
+
 .btc-image {
     width: 25px;
     height: 25px;
