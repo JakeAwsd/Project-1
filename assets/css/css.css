@@ -7,10 +7,6 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-    
-
-
 header {
     display: flex;
     justify-content: center;
@@ -22,8 +18,10 @@ header {
 
 img {
     justify-content: center;
+    object-fit: cover;
     width: 800px;
-    height: 300px;
+    height: 150px;
+    object-position: 10% 20%;
 }
 
 .container {
@@ -36,7 +34,6 @@ img {
     
     flex: 1;
     text-align: center;
-
     margin: 15px;
     border: 2px solid black;
     border-radius: 15px;
@@ -53,13 +50,15 @@ img {
 .eth-image {
     width: 25px;
     height: 25px;
-    position: fixed;
     margin-left: 5px;
+}
+
+.compare-btn {
+    width: 100%;
 }
 
 .btc-image {
     width: 25px;
     height: 25px;
-    position: fixed;
     margin-left: 5px;
 }

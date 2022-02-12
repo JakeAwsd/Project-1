@@ -70,12 +70,12 @@ var addCrypto = function () {
       .then(function(result){
         
           console.log(result);
-          var last = result.last;
+          var last = Math.round(result.last);
           var symbol = result.display_symbol;
           console.log(`this is last ${last}`);
           console.log(`this is symbol ${symbol}`);
-          lastPriceEl.textContent = last;
-          lastPriceEl.textContent = last;
+          lastPriceEl.textContent = "$" + last + " USD";
+
       })
       .catch(error => console.log('error', error));
 }
@@ -94,7 +94,7 @@ randomcryptoButton.addEventListener("click", function(event) {
 
 function localData() {
     var cryptos = JSON.parse(localStorage.getItem("crypto"));
-    var randomNum = Math.floor(Math.random() * 11);
+    var randomNum = Math.floor(Math.random() * 10);
     if (cryptos !== null) {
       document.querySelector("#last-crypto").textContent = cryptos.crypto[randomCryptos[randomNum]] + " has a current price of: " + cryptos.lastPriceEl + " USD"
     }
