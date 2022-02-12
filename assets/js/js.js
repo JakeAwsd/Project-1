@@ -1,6 +1,6 @@
 // var for URL + key
 var localStorage = JSON.parse(localStorage.getItem("crypto"));
-let randomCryptos = ['ADA', 'BTC', 'BSV', 'BTS', 'DOT', 'FIL', 'RDD', 'GRS', 'WBTC', 'LTC'];
+let randomCryptos = ['ADA', 'ATOM', 'BCH', 'BSV', 'BTC', 'BTG', 'COMP', 'DASH', 'DOGE', 'DOT', 'ETC', ];
 
 var body = document.body;
 var h1El = document.createElement("h1");
@@ -12,6 +12,17 @@ var lastPriceEl = document.getElementById('lastPrice');
 var bitcoinEl = document.getElementById('bitcoinEl');
 var randomcryptoButton = document.getElementById('randocryptoBtn');
 var coinNameEl = document.getElementById('coinName');
+
+var nums = [1,2,3,4,5,6,7,8,9,10],
+    ranNums = [],
+    i = nums.length,
+    j = 0;
+
+while (i--) {
+    j = Math.floor(Math.random() * (i+1));
+    ranNums.push(nums[j]);
+    nums.splice(j,1);
+}
 
 var getEtherApi = function () {
     var etcscanApiUrl = 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=' + apiKey;
@@ -56,7 +67,7 @@ var getCryptoNames = function () {
 var addCrypto = function () {
     lastPriceEl.textContent = "";
     var myHeaders = new Headers();
-    
+
     myHeaders.append("x-ba-key", "OGQxMjExMmQ1ZDE3NDM2YTlhNzU5NmM0OTI1MGRhM2I");
 
     var requestOptions = {
@@ -93,11 +104,34 @@ randomcryptoButton.addEventListener("click", function(event) {
 });
 
 function localData() {
+    
     var cryptos = JSON.parse(localStorage.getItem("crypto"));
-    var randomNum = Math.floor(Math.random() * 10);
-    if (cryptos !== null) {
-      document.querySelector("#last-crypto").textContent = cryptos.crypto[randomCryptos[randomNum]] + " has a current price of: " + cryptos.lastPriceEl + " USD"
-    }
+    var randomNum = Math.floor(Math.random() * 11);
+    var myHeaders = new Headers();
+
+    myHeaders.append("x-ba-key", "OGQxMjExMmQ1ZDE3NDM2YTlhNzU5NmM0OTI1MGRhM2I");
+
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    fetch("https://apiv2.bitcoinaverage.com/indices/crypto/ticker/" + [randomCryptos[randomNum]] + "USDT", requestOptions)
+      .then(response => response.json())
+      .then(function(result){
+        
+          console.log(result);
+          var last = Math.round(result.last);
+          var symbol = result.display_symbol;
+          console.log(`this is last ${last}`);
+          console.log(`this is symbol ${symbol}`);
+          if (cryptos !== null) {
+            document.querySelector("#last-crypto").textContent = cryptos.crypto[randomCryptos[randomNum]] + " has a current price of: " + last + " USD"
+          }
+      })
+      .catch(error => console.log('error', error));
+
 }
 
 console.log(randomCryptos[3]);
